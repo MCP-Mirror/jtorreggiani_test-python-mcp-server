@@ -1,0 +1,29 @@
+[project]
+name = "test-server"
+version = "0.1.0"
+description = "A MCP server project"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+ "asyncio>=3.4.3",
+ "mcp>=1.0.0",
+]
+[[project.authors]]
+name = "jtorreggiani"
+email = "joetorreggiani@gmail.com"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+test-server = "test_server:main"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.3.3",
+    "pytest-asyncio>=0.24.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
